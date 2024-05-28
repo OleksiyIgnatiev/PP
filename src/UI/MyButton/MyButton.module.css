@@ -1,0 +1,21 @@
+.button {
+    border-radius: 100%;
+    border-radius: 100px;
+    border: none;
+
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+
+    color: #FFFFFF;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+}

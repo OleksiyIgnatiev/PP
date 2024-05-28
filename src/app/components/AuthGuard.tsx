@@ -2,17 +2,19 @@ import React, { FC, ReactNode, Suspense, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { RouteNames, publicRoutes } from '../router/index';
 import Loader from '../../UI/Loader/Loader';
+import useStore from '../../state/useStore';
 
-import { isAuth, role } from '../constants/Auth';
+
 interface AuthGuardProps {
     children: ReactNode
 }
 const AuthGuard: FC<AuthGuardProps> = (props) => {
+    const {isLoggedIn, role} = useStore();
+    const [isLoading,setIsLoading] = useState();
 
-    const [isLoading,setIsLoading] = useState<boolean>(false);
     return (
         <>
-            {(isAuth && (role === 'admin' || role === 'user')) ?
+            {(isLoggedIn && (role === 'admin' || role === 'user')) ?
                 <>
                 {props.children}
                 </>

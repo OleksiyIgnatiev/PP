@@ -1,0 +1,41 @@
+.main{
+    width: 85px;
+    height: 45px;
+    border-radius: 25px;
+    background-color: #D9D9D9;
+    position: absolute;
+    z-index: 10;
+    top: 25px;
+    right: 35px;
+    cursor: pointer;
+}
+.switcher {
+    position: absolute;
+
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: right 1s ease-in-out, left 1s ease-in-out;
+}
+.switcher img{
+    width: 35px;
+    height: 35px;
+}
+.white .switcher{
+    left: 0;
+    top: 0;
+    right: auto; 
+}
+.black .switcher {
+    right: 0;
+    left: auto;
+    background-color: #000;
+}
+.black{
+    background-color: #323232;
+}

@@ -1,7 +1,6 @@
 import  { FC } from 'react';
 
 
-
 interface MyImageProps {
     alt: string; 
     width?:number;
@@ -12,7 +11,7 @@ interface MyImageProps {
 
 }
 const MyImage: FC<MyImageProps>= (props) => (
-    <img alt={props.alt || 'Ladefehler des Bildes' }
+    <img alt={props.alt || '' }
     src={props.src} 
     style ={{width:props.width, height: props.height}}
     className={props.className}

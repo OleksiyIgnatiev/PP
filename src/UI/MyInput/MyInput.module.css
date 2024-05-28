@@ -1,0 +1,35 @@
+.input {
+    width: 960px;
+    height: 130px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border: none;
+    padding-left: 45px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    color: #000;
+}
+.input::placeholder {
+    text-transform: uppercase;
+    color: #BBBBBB;
+
+}
+.input:last-child {
+    border-radius: 0px 0px 20px 20px;
+}
+
+.input:first-child {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.blackTheme{
+    background: #323232;
+    color: #fff;
+}
+.blackTheme::placeholder{
+    color: #666666;
+}

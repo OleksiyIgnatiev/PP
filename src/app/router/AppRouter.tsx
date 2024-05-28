@@ -3,13 +3,13 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { RouteNames, adminRoutes, userRoutes } from '.';
 
 import Loader from '../../UI/Loader/Loader';
-import { role } from '../constants/Auth';
+import useStore from '../../state/useStore';
 
 const AppRouter = () => {
-
-    
+    const {role} = useStore();
     return (
         <Routes>
+            
             {(role === 'admin') && (
                 <>
                     {adminRoutes.map((route) => (
