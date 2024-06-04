@@ -1,0 +1,58 @@
+
+
+.searchForm {
+    position: absolute;
+    width: 1517.31px;
+    height: 68px;
+    left: 312px;
+    top: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+  
+  .searchContainer {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 0%;
+    bottom: 0%;
+    background: #E7E5F3;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    left: 1.34%;
+    top: 26.47%;
+    width: 32px; 
+    height: 32px; 
+    background: url('../../assets/images/search.png') no-repeat center center;
+    background-size: contain; 
+  }
+  
+  
+  .input {
+    position: absolute;
+    left: 5.21%;
+    right: 0.02%;
+    top: 0%;
+    bottom: 0%;
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 39px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.3);
+    padding-left: 40px; /* Adjust padding if necessary */
+  }
+  
+  .submitButton {
+    display: none; /* Hidden since it is not part of the Figma design */
+  }
+  
