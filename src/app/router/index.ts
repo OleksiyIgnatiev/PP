@@ -30,12 +30,12 @@ export const adminRoutes: IRoute[] = [
 
 export const userRoutes: IRoute[] = [
     { path: RouteNames.MAIN_USER, element: MainUserPage },
+    { path: RouteNames.CATEGORIES, element: CategoriesPage },
+    { path: RouteNames.SHARE, element: SharePage },
+    { path: RouteNames.WORD, element: AddWordPage }
 ]
 
 export const publicRoutes: IRoute[] = [
     { path: RouteNames.LOGIN, element: LoginPage },
-    { path: RouteNames.REGISTRATION, element: RegistrationPage },
-    { path: RouteNames.CATEGORIES, element: CategoriesPage },
-    { path: RouteNames.SHARE, element: SharePage },
-    { path: RouteNames.WORD, element: AddWordPage }, // Додаємо маршрут для сторінки "Add Word Page"
+    { path: RouteNames.REGISTRATION, element: RegistrationPage }
 ]

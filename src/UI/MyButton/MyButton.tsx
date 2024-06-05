@@ -5,6 +5,7 @@ interface Props {
     className: string;
     onClick: (event: MouseEvent<HTMLButtonElement>) => void; // Змінено тип onClick
     children: ReactNode;
+    border?: boolean
 }
 
 const MyButton: React.FC<Props> = (props) => {
@@ -14,7 +15,7 @@ const MyButton: React.FC<Props> = (props) => {
     };
     
     return (
-        <button onClick={handleClick} className={`${style.button} ${props.className}`}>
+        <button onClick={handleClick} className={`${style.button} ${props.className}`} style = {{border: props.border? '1px solid #000':''}}>
             {props.children}
         </button>
     );

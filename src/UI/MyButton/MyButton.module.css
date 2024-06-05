@@ -12,10 +12,11 @@
     align-items: center;
     text-transform: uppercase;
 
-    color: #FFFFFF;
+  
     display: flex;    
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    
 
 }

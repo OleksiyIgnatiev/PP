@@ -1,91 +1,36 @@
-.rectangle10{
-    position: absolute;
-    width: 960px;
-    height: 130px;
-    left: 0px;
-    top: 0px;
-    
-    filter: drop-shadow(0px 4px 4px rgba(68, 68, 68, 0.25));
-    }
-    .rectangle9{
-    position: absolute;
-    width: 960px;
-    height: 130px;
-    left: 0px;
-    top: 135px;
-    
-    filter: drop-shadow(0px 4px 4px rgba(68, 68, 68, 0.25));
-    
-    }
-    .rectangle8{
-    position: absolute;
-    width: 960px;
-    height: 130px;
-    left: 0px;
-    top: 270px;
-    
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    
-    }
-    .inputRow{
-/* Add word field */
+.registerPage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.inputRow{
+    margin: 45px 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+}
+.button {
 
-position: absolute;
-width: 978px;
-height: 390px;
-left: 625px;
-top: 368px;
-
-
-
-    }
-    .buttonRow{
-    /* Component 15 */
-    
-    position: absolute;
-    left: 38.19%;
-    right: 38.19%;
-    top: 73.41%;
-    bottom: 15.51%;
-    
-    filter: drop-shadow(0px 8px 5px rgba(0, 0, 0, 0.25));
-    border-radius: 116px;
-    
-    
-    background: #ffffff;
-    
-    }
-    .button{
-    /* Увійти */
-    
-    position: absolute;
-    left: 3.38%;
-    right: 3.15%;
-    top: 23.64%;
-    bottom: 23.64%;
-    background: #ffffff;
+   width: 445px;
+   height: 110px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 500;
     font-size: 48px;
     line-height: 58px;
-    /* identical to box height */
     text-align: center;
     text-transform: capitalize;
-    
     color: #000000;
-    
-    
-    }
-    .title{
-    /* реєстрація нового акаунту */
-    
-    position: absolute;
-    width: 637px;
-    height: 48px;
-    left: 793px;
-    top: 285px;
-    
+    background: #fff;
+
+
+    filter: drop-shadow(0px 8px 5px rgba(0, 0, 0, 0.25));
+}
+
+
+.title {
     font-family: 'Inter';
     font-style: normal;
     font-weight: 600;
@@ -94,25 +39,19 @@ top: 368px;
     display: flex;
     align-items: center;
     text-transform: uppercase;
-    
     color: #000000;
-    }
-    .siteHeader{
-        /* SiteHeadder */
-    
-    position: absolute;
-    width: 424px;
-    height: 101px;
-    left: 27px;
-    top: 0px;
-    
+}
+
+.siteHeader {
+
+
     font-family: 'Hahmlet';
     font-style: normal;
     font-weight: 400;
     font-size: 70px;
     line-height: 101px;
-    
+
     color: #6DACE7;
-    
-    
-    }
+
+
+}

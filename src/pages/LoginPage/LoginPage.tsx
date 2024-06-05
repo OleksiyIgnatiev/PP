@@ -39,11 +39,10 @@ const LoginPage = () => {
       }
 
     } catch (e) {
+      console.log(e)
       alert(e);
     }
-
   }
-
 
   return (
     <div className={`${style.loginPage} ${theme == 'black' ? style.blackTheme : ''}`}>

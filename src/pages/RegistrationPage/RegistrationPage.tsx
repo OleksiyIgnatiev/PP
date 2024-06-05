@@ -5,6 +5,7 @@ import MyInput from '../../UI/MyInput/MyInput';
 import Logo from '../../UI/Logo/Logo'
 import RegistrationService from './api/RegistrationService';
 import { useNavigate } from 'react-router-dom';
+import Text from '../../UI/Text/Text';
 
 const RegistrationPage: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -55,38 +56,32 @@ const RegistrationPage: React.FC = () => {
   return (
     <div className={style.registerPage}>
       <Logo />
-      <div className={style.title}>Реєстрація нового акаунту</div>
+      <Text className={style.title} type='title'>Реєстрація нового акаунту</Text>
+   
       <div className={style.inputRow}>
-        <div className={style.rectangle10}>
           <MyInput
             value={username}
             setValue={handleUsernameChange}
             placeholder="ім'я користувача"
-            className={style.registerInput}
+            className={style.input}
           />
-        </div>
-        <div className={style.rectangle9}>
           <MyInput
             value={email}
             setValue={handleEmailChange}
             placeholder="пошта"
-            className={style.registerInput}
+            className={style.input}
           />
-        </div>
-        <div className={style.rectangle8}>
           <MyInput
             value={password}
             setValue={handlePasswordChange}
             placeholder="пароль"
-            className={style.registerInput}
+            className={style.input}
           />
-        </div>
-      </div>
-      <div className={style.buttonRow}>
-        <MyButton onClick={handleSubmit} className={style.button}>
+          </div>
+        <MyButton onClick={handleSubmit} className={style.button} border>
           Зареєструватися
         </MyButton>
-      </div>
+      
     </div>
   );
 };
