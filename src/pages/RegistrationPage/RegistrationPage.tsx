@@ -6,6 +6,7 @@ import Logo from '../../UI/Logo/Logo'
 import RegistrationService from './api/RegistrationService';
 import { useNavigate } from 'react-router-dom';
 import Text from '../../UI/Text/Text';
+import BackArrow from '../../UI/BackArrow/BackArrow';
 
 const RegistrationPage: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -57,7 +58,7 @@ const RegistrationPage: React.FC = () => {
     <div className={style.registerPage}>
       <Logo />
       <Text className={style.title} type='title'>Реєстрація нового акаунту</Text>
-   
+    <BackArrow/>
       <div className={style.inputRow}>
           <MyInput
             value={username}
