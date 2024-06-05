@@ -1,0 +1,199 @@
+.categoriesPage {
+    position: absolute;
+    width: 100%; /* Займати всю ширину сторінки */
+    height: 100%; /* Займати всю висоту сторінки */
+    left: 0;
+    top: 0;
+    background: #FBFAFF; /* Колір фону */
+    /* Додаткові стилі */
+  }
+
+  .header{
+    /* Словник */
+
+position: absolute;
+width: 185px;
+height: 48px;
+left: 89px;
+top: 136px;
+
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 49px;
+text-align: center;
+text-transform: capitalize;
+
+color: #000000;
+
+
+  }
+ /* CategoriesPage.module.css */
+
+.categoriesPage {
+    position: relative;
+  }
+  
+  .group6 {
+    position: absolute;
+    width: 1720px;
+    height: 87px;
+    left: 13px;
+    top: 20px;
+  }
+  
+  .rectangle37 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 1720px;
+    height: 87px;
+    left: 89px;
+    top: 285px;
+    background: #FFFFFF;
+    border: 1px solid #F9F9F8;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0px 0px;
+  }
+  
+  .group2 {
+    position: absolute;
+    width: 37.16px;
+    height: 32px;
+    left: 64px; /* Adjusted position */
+    top: 256px; /* Adjusted position */
+  }
+  
+  .rectangle189 {
+    position: absolute;
+    width: 3.98px;
+    height: 32px;
+    left: 64px; /* Adjusted position */
+    top: 58px; /* Adjusted position */
+    background: #232323;
+    z-index: 2; /* Set a higher z-index */
+  }
+  
+  .rectangle190 {
+    position: absolute;
+    width: 3.43px;
+    height: 37.16px;
+    left: 64px; /* Adjusted position */
+    top: 56px; /* Adjusted position */
+    background: #232323;
+    transform: rotate(-90deg);
+    z-index: 2; /* Set a higher z-index */
+  }
+  
+  
+  
+  
+  
+  
+  .group3 {
+    position: absolute;
+    width: 1720px;
+    height: 179px;
+    left: 13px;
+    top: 20px;
+  }
+  
+  .rectangle38 {
+    box-sizing: border-box;
+    position: absolute;
+    width: 1720px;
+    height: 87px;
+    left: 89px;
+    top: 377px;
+    background: #FFFFFF;
+    border: 1px solid #F9F9F8;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 20px 20px;
+  }
+  .addCategoryButton {
+    position: absolute;
+    width: 250px; /* Adjust the width as needed */
+    height: 30px;
+    left: 181.91px;
+    top: 312px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.ownWordsButton {
+    position: absolute;
+    width: 250px; /* Adjust the width as needed */
+    height: 30px;
+    left: 181.91px;
+    top: 405px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+    text-decoration: none;
+}
+
+.wordCount {
+    position: absolute;
+    width: 250px; /* Adjust the width as needed */
+    height: 30px;
+    left: 802.09px;
+    top: 405px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+.percentage {
+    position: absolute;
+    width: 250px; /* Adjust the width as needed */
+    height: 30px;
+    left: 1683.57px;
+    top: 405px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+}
+
+  
+  
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнений колір */
+    opacity: 0; /* Початкова прозорість */
+    transition: opacity 0.3s ease; /* Плавне зміна прозорості */
+    pointer-events: none; /* Ігнорувати кліки на затемненому фоні */
+  }
+  
+  .showOverlay {
+    opacity: 1; /* Показати затемнення при відображенні вікна */
+  }
+  

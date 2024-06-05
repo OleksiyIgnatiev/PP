@@ -1,0 +1,163 @@
+/* Group 31 */
+.group31 {
+    position: absolute;
+    width: 483px;
+    height: 263px;
+    left: 860px; /* Зменшено значення для переміщення лівіше */
+    top: 365px;
+    z-index: 10;
+  }
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+  }
+  /* Rectangle 183 */
+  .rectangle183 {
+    position: absolute;
+    width: 483px;
+    height: 263px;
+    left: calc(50% - 483px / 2 + 0.5px);
+    top: calc(50% - 263px / 2);
+    background: #ffffff;
+    border-radius: 40px;
+    z-index: 1;
+  }
+  
+  /* Title */
+  .title {
+    position: absolute;
+    width: 313px;
+    height: 32px;
+    left: calc(50% - 313px / 2 + 0.5px);
+    top: 32px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 32px;
+    text-align: center;
+    color: #30484d;
+    z-index: 2;
+  }
+  
+  /* Add Category Close Button */
+  .addCategoryCloseButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 2;
+    color: #000000;
+  }
+  
+  /* Form Field */
+  .formField {
+    position: absolute;
+    width: 360px;
+    height: 53px;
+    left: calc(50% - 360px / 2);
+    bottom: 130px;
+    z-index: 2;
+  }
+  
+  /* Background */
+  .background {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    background: #ffffff;
+    border-radius: 10px;
+  }
+  
+  .input {
+    position: absolute;
+    width: calc(100% - 50px);
+    height: 100%;
+    left: 25px;
+    top: 27px; /* Змінено значення top для відповідності вказаним стилям для підсказки */
+    border: 1px solid #9c9c9c;
+    border-radius: 10px;
+    outline: none;
+    font-size: 16px;
+    padding: 0 10px;
+
+    /* Стилі для тексту, що вводиться */
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    color: #000000;
+}
+
+
+
+  
+  /* Button */
+  .rectangle163 {
+    position: absolute;
+    bottom: 20px;
+    left: 20%; /* Додано відступ зліва */
+    width: 60%; /* Кнопка займатиме 80% ширини батьківського контейнера */
+    background: #698AFE;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+    z-index: 2;
+    border: none; /* Відсутність рамки */
+  box-shadow: none; /* Відсутність тіні */
+  }
+  
+  .buttonTitle {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .bigLabel{
+    /* Big label */
+
+position: absolute;
+height: 62px;
+left: 25px;
+right: 23px;
+top: -3px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+color: #000000;
+
+
+  }
+  /* AddCategoryForm.module.css */
+
+.darkOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Задаємо затемнення */
+    z-index: 999; /* Забезпечуємо, що затемнення буде поверх інших елементів */
+  }
+  
