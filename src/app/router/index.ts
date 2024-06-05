@@ -2,7 +2,6 @@ import React from 'react';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import MainAdminPage from '../../pages/MainAdminPage/MainAdminPage';
 import MainUserPage from '../../pages/MainUserPage/MainUserPage';
-import AdminLoginPage from '../../pages/AdminLoginPage/AdminLoginPage';
 
 export interface IRoute{
     path:string;
@@ -28,6 +27,5 @@ export const userRoutes:IRoute[] = [
 
 export const publicRoutes:IRoute[] = [
     {path: RouteNames.LOGIN, element: LoginPage},
-    {path: RouteNames.ADMIN_LOGIN, element: AdminLoginPage},
 ]
 

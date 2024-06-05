@@ -15,7 +15,7 @@ const useStore = create<State>((set) => ({
     userId: null,
     role: null,
     theme: 'white',
-
+    
     loginState: (userId: number, role: string) => {
         localStorage.setItem('userId', String(userId))
         localStorage.setItem('role', String(role))
