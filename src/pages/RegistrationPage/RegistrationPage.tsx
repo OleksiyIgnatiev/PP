@@ -4,6 +4,7 @@ import MyButton from '../../UI/MyButton/MyButton';
 import MyInput from '../../UI/MyInput/MyInput';
 import Logo from '../../UI/Logo/Logo'
 import RegistrationService from './api/RegistrationService';
+import { useNavigate } from 'react-router-dom';
 
 const RegistrationPage: React.FC = () => {
   const [username, setUsername] = useState('');
@@ -35,13 +36,15 @@ const RegistrationPage: React.FC = () => {
     setPassword(value);
     
   };
-
+  const navigate = useNavigate()
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     event.preventDefault();
 
     if (validate()) {
       try {
         const response = await RegistrationService.register(username, email, password);
+       alert ("Ви успішно регістр")
+       navigate("/login")
         console.log('Registration successful:', response.data);
       } catch (error) {
         console.error('Registration error:', error);

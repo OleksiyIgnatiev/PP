@@ -9,8 +9,7 @@ type State = 'white' | 'black';
 
 
 const ThemeSwitcher: FC = () => {
-/*   const [switcherState, setSwitcherState] = useState<State>('white'); */
-  const {  theme,setTheme } = useStore();
+  const {  theme, setTheme } = useStore();
 
   const handleStateChange = () => {
     const color  = theme === 'black' ? 'white' : 'black'

@@ -2,7 +2,6 @@ import React from 'react';
 import LoginPage from '../../pages/LoginPage/LoginPage';
 import MainAdminPage from '../../pages/MainAdminPage/MainAdminPage';
 import MainUserPage from '../../pages/MainUserPage/MainUserPage';
-import AdminLoginPage from '../../pages/AdminLoginPage/AdminLoginPage';
 import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import CategoriesPage from '../../pages/CategoriesPage/CategoriesPage'; 
 import SharePage from '../../pages/SharePage/SharePage';
@@ -35,7 +34,6 @@ export const userRoutes: IRoute[] = [
 
 export const publicRoutes: IRoute[] = [
     { path: RouteNames.LOGIN, element: LoginPage },
-    { path: RouteNames.ADMIN_LOGIN, element: AdminLoginPage },
     { path: RouteNames.REGISTRATION, element: RegistrationPage },
     { path: RouteNames.CATEGORIES, element: CategoriesPage },
     { path: RouteNames.SHARE, element: SharePage },
