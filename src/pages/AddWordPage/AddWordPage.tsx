@@ -1,111 +1,118 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './AddWordPage.module.css';
+import { fetchCategories } from './api/AddWordServise';
+import placeholderImage from '../../assets/images/photo.png'; // Імпорт зображення
 
 const AddWordPage: React.FC = () => {
-  const [category, setCategory] = useState('');
-  const [word, setWord] = useState('');
-  const [transcription, setTranscription] = useState('');
-  const [translation, setTranslation] = useState('');
-  const [imageFile, setImageFile] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+    const [selectedItem, setSelectedItem] = useState<string>('');
+    const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+    const [categories, setCategories] = useState<string[]>([]);
+    const [word, setWord] = useState<string>('');
+    const [transcription, setTranscription] = useState<string>('');
+    const [translation, setTranslation] = useState<string>('');
+    const [image, setImage] = useState<string>(placeholderImage); // Додаємо стан для зображення
 
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const newImageFile = event.target.files?.[0];
-
-    if (newImageFile) {
-      const validImageTypes = ['image/jpeg', 'image/png', 'image/gif'];
-      if (!validImageTypes.includes(newImageFile.type)) {
-        alert('Invalid image format. Please select a JPEG, PNG, or GIF image.');
-        return;
-      }
-
-      setImageFile(newImageFile);
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        if (e.target?.result) {
-          setImageUrl(e.target.result as string);
+    useEffect(() => {
+        async function fetchCategoriesFromAPI() {
+            const categories = await fetchCategories();
+            setCategories(categories);
         }
-      };
-      reader.readAsDataURL(newImageFile);
-    }
-  };
 
-  const handleSubmit = async () => {
-    // Handle form submission logic here
+        fetchCategoriesFromAPI();
+    }, []);
 
-    if (imageFile) {
-      // Implement logic to upload the image file to a server or storage service
-      // Update the state with the uploaded image URL (optional)
-    }
+    const handleSelectItem = (event: React.ChangeEvent<HTMLSelectElement>) => {
+        setSelectedItem(event.target.value);
+    };
 
-    console.log({
-      category,
-      word,
-      transcription,
-      translation,
-      imageFile,
-      imageUrl,
-    });
-  };
+    const toggleDropdown = () => {
+        setIsDropdownOpen(!isDropdownOpen);
+    };
 
-  return (
-    <div className={styles.container}>
-      <div className={styles.formGroup}>
-        <div className={styles.form1}>
-        <select
-          id="category"
-          value={category}
-          onChange={e => setCategory(e.target.value)}
-          className={styles.select}
-        >
-          <option value="">Виберіть категорію</option>
-          <option value="english">Англійські слова</option>
-          <option value="special">Особливі</option>
-          <option value="own">Власні слова</option>
-        </select>
+    const handleWordChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setWord(event.target.value);
+    };
+
+    const handleTranscriptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setTranscription(event.target.value);
+    };
+
+    const handleTranslationChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setTranslation(event.target.value);
+    };
+
+    const handleAddWord = () => {
+        // Додати логіку для додавання слова
+    };
+    const [imageSize, setImageSize] = useState<{ width: number; height: number }>({ width: 850, height: 390 });
+
+    const handleUploadPhotoClick = (event: React.ChangeEvent<HTMLInputElement>) => {
+        
+    };
+    
+    
+    
+
+    return (
+        <div className={styles.container}>
+            <div className={styles.selectWrapper}>
+                <select
+                    className={`${styles.select} ${isDropdownOpen ? styles.open : ''}`}
+                    value={selectedItem}
+                    onChange={handleSelectItem}
+                    onClick={toggleDropdown}
+                >
+                    <option value="" disabled={!isDropdownOpen}>Виберіть категорію</option>
+                    {categories.map(category => (
+                        <option key={category} value={category}>{category}</option>
+                    ))}
+                </select>
+
+                <svg
+                    className={`${styles.arrowIcon} ${isDropdownOpen ? styles.rotated : ''}`}
+                    width="42"
+                    height="25"
+                    viewBox="0 0 42 25"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                >
+                    <path d="M2 2L21 22L40 2" stroke="#BBBBBB" strokeWidth="4" />
+                </svg>
+            </div>
+
+            <div className={styles.inputs}>
+                <input
+                    type="text"
+                    className={styles.input}
+                    value={word}
+                    onChange={handleWordChange}
+                    placeholder="Слово англійською"
+                />
+                <input
+                    type="text"
+                    className={styles.input}
+                    value={transcription}
+                    onChange={handleTranscriptionChange}
+                    placeholder="Транскрипція"
+                />
+                <input
+                    type="text"
+                    className={styles.input}
+                    value={translation}
+                    onChange={handleTranslationChange}
+                    placeholder="Переклад"
+                />
+                <button className={styles.addButton} onClick={handleAddWord}>Додати</button>
+                
+                <div className={styles.uploadPhotoContainer}>
+                    <label className={styles.uploadPhotoButton}>
+                        <input type="file" className={styles.uploadPhotoInput} onChange={handleUploadPhotoClick} />
+                        <img src={image} alt="Зображення" className={styles.uploadPhotoImage} style={{ width: `${imageSize.width}px`, height: `${imageSize.height}px` }} />
+                    </label>
+                </div>
+            </div>
         </div>
-        </div>
-        <div className={styles.formGroup}>
-        <label htmlFor="word" className={styles.label}></label>
-        <input
-          type="text"
-          id="word"
-          value={word}
-          onChange={e => setWord(e.target.value)}
-          placeholder="Слово англійською"
-          className={styles.input}
-        />
-        </div>
-        <div className={styles.formGroup}>
-        <label htmlFor="transcription" className={styles.label}></label>
-        <input
-          type="text"
-          id="transcription"
-          value={transcription}
-          onChange={e => setTranscription(e.target.value)}
-          placeholder="Транскрипція"
-          className={styles.input}
-        />
-        </div>
-        <div className={styles.formGroup}>
-        <label htmlFor="translation" className={styles.label}></label>
-        <input
-          type="text"
-          id="translation"
-          value={translation}
-          onChange={e => setTranslation(e.target.value)}
-          placeholder="Переклад"
-          className={styles.input}
-        />
-      </div>
-      <div className={styles.formGroup}>
-        <label htmlFor="imageUpload" className={styles.label}>Зображення</label>
-        <input type="file" id="imageUpload" onChange={handleImageUpload} />
-        {imageUrl && <img src={imageUrl} alt="Preview" className={styles.previewImage} />}
-      </div>
-      <button onClick={handleSubmit} className={styles.button}>Додати</button>
-    </div>
-  );
+    );
 };
 
 export default AddWordPage;

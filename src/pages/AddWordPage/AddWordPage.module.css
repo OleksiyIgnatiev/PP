@@ -1,31 +1,143 @@
-.container{
-  /* Add word page */
 
-position: relative;
-width: 100%;
-height: 100%;
 
-background: #FBFAFF;
+.selectWrapper {
+  position: relative;
+  width: 550px;
+  height: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+  margin-top: 150px;
+  margin-left: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.arrowIcon {
+  position: absolute;
+  top: 40%;
+  right: 15px;
+}
+
+.arrowIcon path {
+  stroke: #BBBBBB;
+}
+
+.select {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: #BBBBBB;
+  border: none;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: calc(100% - 40px);
+  padding: 20px;
+  max-height: none;
+  overflow: hidden;
+}
+
+.select option {
+  padding: 10px;
+}
+
+.open .select {
+  max-height: 200px;
+}
+
+
+.open .arrowIcon {
+  transform: translateY(-50%) rotate(180deg); 
+}
+.inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; 
+  margin-top: 80px; 
+  margin-left: 120px;
+}
+
+.inputs .input {
+  width: 1100px; 
+  height: 140px; 
+  padding: 20px; 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 36px;
+  display: flex;
+  align-items: center;
+  color: #000;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  border: none;
+  padding-left: 45px; 
+  border-radius: 10px; 
+  box-sizing: border-box; 
+  margin-bottom: 0px; 
+}
+.input::placeholder {
+  text-transform: uppercase;
+  color: #BBBBBB;
 
 }
-.form1{
-  /* Frame 1 */
-
-/* Auto layout */
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 4px 12px;
-gap: 12px;
-
-position: absolute;
-left: 0%;
-right: 15.61%;
-top: 0%;
-bottom: 75.36%;
-
-background: #FFFFFF;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 10px;
-
+.input:last-child {
+  border-radius: 0px 0px 20px 20px;
 }
+
+.input:first-child {
+  border-radius: 20px 20px 0px 0px;
+}
+.addButton {
+  background-color: #698afe;
+  color: #fff;
+  border: none;
+  border-radius: 60px; 
+  padding: 15px 30px; 
+  font-family: 'Inter';
+  font-size: 42px;
+  cursor: pointer;
+  margin-left: 13px; 
+  margin-top: 70px; 
+  width: 400px; 
+  height: 110px; 
+}
+
+
+.uploadPhotoContainer {
+  position: absolute;
+  top: 320px; 
+  right: 100px; 
+}
+
+.uploadPhotoButton {
+  background-color: #FFFFFF;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ccc;
+  border-radius: 50px; 
+  width: 850px;
+  height: 390px; 
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.uploadPhotoInput {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.uploadPhotoButton:hover {
+  background-color: #f0f0f0;
+}
+
