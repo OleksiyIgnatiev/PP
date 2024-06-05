@@ -21,7 +21,7 @@ export enum RouteNames {
     REGISTRATION = '/registration',
     CATEGORIES = '/categories', 
     SHARE = '/share',
-    WORD = '/word', // Змінено шлях на /word
+    WORD = '/word', 
 }
 
 export const adminRoutes: IRoute[] = [
@@ -37,5 +37,6 @@ export const userRoutes: IRoute[] = [
 
 export const publicRoutes: IRoute[] = [
     { path: RouteNames.LOGIN, element: LoginPage },
-    { path: RouteNames.REGISTRATION, element: RegistrationPage }
+    { path: RouteNames.REGISTRATION, element: RegistrationPage },
+    { path: RouteNames.CATEGORIES, element: CategoriesPage }, // Додано категорії до публічних роутів
 ]

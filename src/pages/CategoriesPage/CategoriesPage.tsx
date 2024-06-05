@@ -1,27 +1,36 @@
-// CategoriesPage.tsx
-
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './CategoriesPage.module.css';
 import SearchInput from '../../UI/SearchInput/SearchInput';
 import AddCategoryForm from '../../components/CategoriesPage/AddCategoryForm';
+import CategoryService from './api/CategoriesPage';
+import useStore from '../../state/useStore';
 
-const CategoriesPage: React.FC = () => {
+
+
+
+
+const CategoriesPage: React.FC = ({  }) => {
   const [showAddCategory, setShowAddCategory] = useState(false);
   const [filteredCategories, setFilteredCategories] = useState<string[]>([]);
   const [wordCount, setWordCount] = useState(0); // Кількість слів
-
+  const {userId}= useStore()
   const handleSearch = (searchTerm: string) => {
     // Handle the search logic here
   };
 
-  const handleAddCategory = (newCategory: string) => {
-    // Handle the add category logic here
-    setShowAddCategory(false); // Close the add category form after adding a category
+  const handleAddCategory = async (newCategory: string) => {
+    try {
+      const response = await CategoryService.createCategory(newCategory, Number(userId));
+      console.log('Категорію успішно створено:', response.data);
+    } catch (error) {
+      console.error('Помилка при створенні категорії:', error);
+    }
   };
+  
 
   const handleCloseForm = () => {
-    setShowAddCategory(false); // Встановлюємо showAddCategory в false при закритті форми
+    setShowAddCategory(false); 
   };
 
   return (
@@ -49,8 +58,8 @@ const CategoriesPage: React.FC = () => {
         <Link to="/own-words" className={styles.ownWordsButton}>
           Власні слова
         </Link>
-        <div className={styles.wordCount}>{wordCount} слова</div> {/* Відображаємо кількість слів */}
-        <div className={styles.percentage}>{wordCount === 0 ? '0%' : '100%'}</div> {/* Відображаємо відсоток */}
+        <div className={styles.wordCount}>{wordCount} слова</div> 
+        <div className={styles.percentage}>{wordCount === 0 ? '0%' : '100%'}</div> 
       </div>
 
       {showAddCategory && (
