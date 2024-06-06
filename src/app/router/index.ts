@@ -21,21 +21,24 @@ export enum RouteNames {
     REGISTRATION = '/registration',
     CATEGORIES = '/categories', 
     SHARE = '/share',
-    WORD = '/word', // Змінено шлях на /word
+    WORD = '/word', 
 }
 
 export const adminRoutes: IRoute[] = [
     { path: RouteNames.MAIN_ADMIN, element: MainAdminPage },
-]
+];
 
 export const userRoutes: IRoute[] = [
     { path: RouteNames.MAIN_USER, element: MainUserPage },
     { path: RouteNames.CATEGORIES, element: CategoriesPage },
     { path: RouteNames.SHARE, element: SharePage },
-    { path: RouteNames.WORD, element: AddWordPage }
-]
+    { path: RouteNames.WORD, element: AddWordPage },
+];
 
 export const publicRoutes: IRoute[] = [
     { path: RouteNames.LOGIN, element: LoginPage },
-    { path: RouteNames.REGISTRATION, element: RegistrationPage }
-]
+    { path: RouteNames.REGISTRATION, element: RegistrationPage },
+    { path: RouteNames.CATEGORIES, element: CategoriesPage },
+    { path: RouteNames.WORD, element: AddWordPage }, // Роут слова додано до публічних роутів
+    { path: RouteNames.SHARE, element: SharePage }, // Роут Share додано до публічних роутів
+];
