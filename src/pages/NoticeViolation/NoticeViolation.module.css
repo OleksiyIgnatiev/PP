@@ -1,0 +1,76 @@
+.noticeViolationPage {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px;
+  position: relative;
+  height: 100vh;
+  font-family: 'Inter';
+  font-style: normal;
+  font-size: 1.5em; 
+  font-family: 'Inter';
+  font-style: normal;
+}
+
+.inputBox {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 15px;
+  border-radius: 10px; 
+  font-size: 1.5em; 
+  border: none;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.emailBox {
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 600px;
+  padding: 15px; 
+  border-radius: 10px; 
+  background-color: #f0f0f0;
+  border: 1px solid #bdbdbd;
+  box-sizing: border-box;
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.adminEmail {
+  font-weight: bold;
+  font-size: 1.5em; 
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.noticeBox {
+  margin: 0 auto;
+  border: none;
+  border-radius: 25px;
+  padding: 100px;
+  background-color: #ccd5f7;
+  width: 100%;
+  max-width: 1800px;
+
+  font-size: 1.5em; 
+  height: 600px; 
+  resize: none; 
+  filter: drop-shadow(0px 5px 4px rgba(0, 0, 0, 0.25));
+}
+
+.sendButton {
+  position: absolute;
+  bottom: 40px;
+  right: 40px; 
+  padding: 20px 40px; 
+  background-color: #91a8fc;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px; 
+  font-size: 1.5em; 
+}
+
+.sendButton:hover {
+  background-color: #698AFE;
+}

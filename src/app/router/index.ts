@@ -6,6 +6,10 @@ import RegistrationPage from '../../pages/RegistrationPage/RegistrationPage';
 import CategoriesPage from '../../pages/CategoriesPage/CategoriesPage'; 
 import SharePage from '../../pages/SharePage/SharePage';
 import AddWordPage from '../../pages/AddWordPage/AddWordPage';
+import AdminPanel from '../../pages/AdminPanel/AdminPanel';
+import Subscription from '../../pages/Subscription/Subscription';
+import EditUserPage from '../../pages/EditUserPage/EditUserPage';
+import NoticeViolation from '../../pages/NoticeViolation/NoticeViolation';
 
 export interface IRoute {
     path: string;
@@ -22,6 +26,11 @@ export enum RouteNames {
     CATEGORIES = '/categories', 
     SHARE = '/share',
     WORD = '/word', 
+    ADMIN_PANEL = '/admin-panel',
+    EDIT_USER = '/edit-user',
+    SUBSCRIPTION = '/subscription',
+    NOTICE_VIOLATION = '/notice-violation',
+
 }
 
 export const adminRoutes: IRoute[] = [
@@ -41,4 +50,8 @@ export const publicRoutes: IRoute[] = [
     { path: RouteNames.CATEGORIES, element: CategoriesPage },
     { path: RouteNames.WORD, element: AddWordPage }, // Роут слова додано до публічних роутів
     { path: RouteNames.SHARE, element: SharePage }, // Роут Share додано до публічних роутів
+    { path: RouteNames.ADMIN_PANEL, element: AdminPanel },
+    { path: RouteNames.EDIT_USER, element: EditUserPage },
+    { path: RouteNames.NOTICE_VIOLATION, element: NoticeViolation },
+    { path: RouteNames.SUBSCRIPTION, element: Subscription },
 ];
