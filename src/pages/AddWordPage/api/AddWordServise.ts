@@ -11,10 +11,7 @@ interface AddWordResponse {
 
 export interface Category {
     categoryId: number;
-    categoryLength: number;
     categoryName: string;
-    progressionPercentage: number;
-    userId: number;
 }
 
 interface CategoryResponse {
@@ -22,18 +19,20 @@ interface CategoryResponse {
 }
 
 export default class AddWordService {
-    // Метод для додавання слова
-    static async addWord(name: string, translation: string, categoryId: number, imgLink: string): Promise<AxiosResponse<AddWordResponse>> {
+    static async addWord(name: string, translation: string, categoryId: number, imgLink: string|null): Promise<AxiosResponse<AddWordResponse>> {
         return $api.post<AddWordResponse>('/words', {
             name,
             translation,
             categoryId,
-            imgLink // Додано поле imgLink
+            imgLink 
         });
     }
 
-    // Метод для отримання категорій конкретного користувача
     static async fetchCategories(userId: number): Promise<AxiosResponse<CategoryResponse>> {
         return $api.get<CategoryResponse>(`Category/user/${userId}`);
+    }
+
+    static async genetateImage(query: string): Promise<AxiosResponse<string>> {
+        return $api.get<string>(`words/image/${query}`);
     }
 }
