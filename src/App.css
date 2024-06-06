@@ -31,6 +31,18 @@ input:focus {
   outline: none;
 }
 .app {
+  position: relative;
   width: 100vw;
   height: 100vh;
+  background: #F0EFF5;
+}
+
+.row{
+  display: flex;
+  flex-direction: row;
+}
+.column{
+  display: flex;
+  flex-direction: column;
+
 }

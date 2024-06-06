@@ -45,11 +45,11 @@ const RegistrationPage: React.FC = () => {
     if (validate()) {
       try {
         const response = await RegistrationService.register(username, email, password);
-       alert ("Ви успішно регістр")
-       navigate("/login")
+        alert ("Ви успішно регістр")
+        navigate("/login")
         console.log('Registration successful:', response.data);
       } catch (error) {
-        console.error('Registration error:', error);
+        alert('Користувач за таким email вже е в системі');
       }
     }
   };    

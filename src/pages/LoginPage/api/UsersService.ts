@@ -14,7 +14,7 @@ export default class LoginService {
         })
     }
 
-    static async loginGoogle(): Promise<AxiosResponse> {
-        return $api.get<LoginResponse>('GoogleOAuth/RedirectOnOAuthServerlogin')
+    static async loginGoogle(): Promise<AxiosResponse<string>> {
+        return $api.get<string>('GoogleOAuth/redirectOnOAuthServer')
     }
 }

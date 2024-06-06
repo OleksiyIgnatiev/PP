@@ -19,7 +19,9 @@ const LoginPage = () => {
 
   }
   const loginGoogle = async () => {
-    await LoginService.loginGoogle();
+    const {data} = await LoginService.loginGoogle();
+    window.location.href = data
+    console.log(data)
   }
   const validate = (): boolean => {
     if (name.trim() !== '' && password.trim() !== '') {
@@ -35,12 +37,13 @@ const LoginPage = () => {
         const {data} = await LoginService.login(name, password);
         console.log(data) 
         loginState(data.data.userId, data.data.role);
+      
         navigate(RouteNames.MAIN_USER);
       }
 
     } catch (e) {
-      console.log(e)
-      alert(e);
+      
+      alert('Неправильно введені данні');
     }
   }
 

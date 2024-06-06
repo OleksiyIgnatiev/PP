@@ -16,8 +16,7 @@ const App = () => {
 
   },[])
   return (
-    <div className={`app ${theme}Theme`} style ={{backgroundColor: theme}}>
-  
+    <div className={`app ${theme}Theme`} style ={{backgroundColor: theme == 'white' ? '#F0EFF5': '#000'}}>
     <AuthGuard>
         <AppRouter />
     </AuthGuard>

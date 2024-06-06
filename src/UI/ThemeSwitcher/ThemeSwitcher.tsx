@@ -4,11 +4,11 @@ import whiteLogo from '../../assets/images/switcherWhite.png';
 import blackLogo from '../../assets/images/switcherBlack.png';
 import useStore from '../../state/useStore';
 
+interface Props{
+  className?:string
+}
 
-type State = 'white' | 'black';
-
-
-const ThemeSwitcher: FC = () => {
+const ThemeSwitcher: FC<Props> = (props) => {
   const {  theme, setTheme } = useStore();
 
   const handleStateChange = () => {
@@ -29,7 +29,7 @@ const ThemeSwitcher: FC = () => {
 
 
   return (
-    <div className={`${style.main} ${theme === 'white' ? style.white : style.black}`} onClick={handleStateChange}>
+    <div className={`${style.main} ${theme === 'white' ? style.white : style.black} ${props.className}`} onClick={handleStateChange}>
       <div className={style.switcher}>
         <img src={theme === 'white' ? whiteLogo : blackLogo} alt="switcher" />
       </div>

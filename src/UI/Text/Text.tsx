@@ -8,8 +8,6 @@ interface Props{
 }
 const Text:FC<Props> = (props)=> {
     const {theme} = useStore();
-
-
     return (
         <div className={`${style.text} ${props.className} ${theme == 'black' ? style.black: ''} ${props.type && (props.type == 'title'? style.titleText: style.normalText)}`}>
             {props.children}
