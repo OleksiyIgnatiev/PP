@@ -5,9 +5,10 @@ import searchImage from '../../assets/images/search.png';
 interface SearchInputProps {
   placeholder: string;
   onSearch: (searchTerm: string) => void;
+  className:string
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch }) => {
+const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch, ...props}) => {
   const [searchTerm, setSearchTerm] = useState('');
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -20,8 +21,7 @@ const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className={styles.searchForm}>
-      <div className={styles.searchContainer}>
+    <form onSubmit={handleSubmit} className={`${styles.searchForm} ${props.className}`}>
         <img src={searchImage} alt="Пошук" title="Шукати" className={styles.searchIcon} />
         <input
           type="text"
@@ -30,8 +30,6 @@ const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch }) => {
           placeholder={placeholder}
           className={styles.input}
         />
-        <button type="submit" className={styles.submitButton}>Пошук</button>
-      </div>
     </form>
   );
 };

@@ -52,27 +52,10 @@ const CategoriesPage: React.FC = () => {
     return (
         <div className={styles.categoriesPage}>
             <div className={styles.header}>
-                <h1>Словник</h1>
+
                 <SearchInput placeholder="Пошук" onSearch={() => {}} />
             </div>
 
-            <div className={styles.buttonsSection}>
-                <button
-                    className={styles.addCategoryButton}
-                    title="Додати категорію"
-                    onClick={() => setShowAddCategory(true)}
-                >
-                    Додати категорію
-                </button>
-                <Link to="/own-words" className={styles.ownWordsButton}>
-                    Власні слова
-                </Link>
-            </div>
-
-            <div className={styles.wordCountSection}>
-                <div className={styles.totalWordCount}>{wordCount} слова</div>
-                <div className={styles.percentage}>{wordCount === 0 ? '0%' : '100%'}</div>
-            </div>
 
             {showAddCategory && (
                 <>
