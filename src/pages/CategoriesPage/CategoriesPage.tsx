@@ -5,28 +5,31 @@ import SearchInput from '../../UI/SearchInput/SearchInput';
 import AddCategoryForm from '../../components/CategoriesPage/AddCategoryForm';
 import CategoryService, { Category } from './api/CategoriesPageServise';
 import useStore from '../../state/useStore';
+import BackArrow from '../../UI/BackArrow/BackArrow';
+import MyButton from '../../UI/MyButton/MyButton';
 
 const CategoriesPage: React.FC = () => {
     const [showAddCategory, setShowAddCategory] = useState(false);
     const [categories, setCategories] = useState<Category[]>([]);
+    const [currentCategories, setCurrentCategories] = useState<Category[]>([]);
     const [wordCount, setWordCount] = useState(0);
     const { userId } = useStore();
+    async function fetchCategoriesFromAPI() {
+        try {
+            const response = await CategoryService.fetchCategories(userId || 0);
+            if (response.status === 200) {
+                setCategories(response.data.data);
+                setCurrentCategories(response.data.data)
+                console.log('Categories loaded:', response.data);
+            } else {
+                console.error('Failed to fetch categories. Status:', response.status);
+            }
+        } catch (error) {
+            console.error('Error fetching categories:', error);
+        }
+    }
 
     useEffect(() => {
-        async function fetchCategoriesFromAPI() {
-            try {
-                const response = await CategoryService.fetchCategories(userId || 0);
-                if (response.status === 200) {
-                    setCategories(response.data.data);
-                    console.log('Categories loaded:', response.data);
-                } else {
-                    console.error('Failed to fetch categories. Status:', response.status);
-                }
-            } catch (error) {
-                console.error('Error fetching categories:', error);
-            }
-        }
-
         fetchCategoriesFromAPI();
     }, [userId]);
 
@@ -39,33 +42,45 @@ const CategoriesPage: React.FC = () => {
         try {
             const response = await CategoryService.createCategory(newCategory, Number(userId));
             console.log('Категорію успішно створено:', response.data);
-            setCategories([...categories, response.data]);
+            //@ts-ignore
+            navigate(`/categorie/${response.data.data}`)
+
         } catch (error) {
             console.error('Помилка при створенні категорії:', error);
         }
     };
+    const handleSearch = (searchValue: string) => {
+        const filteredCategories = categories.filter(category => category.categoryName.includes(searchValue));
+        setCurrentCategories(filteredCategories);
+    }
 
-    const handleCloseForm = () => {
-        setShowAddCategory(false);
-    };
     const navigate = useNavigate()
     return (
         <div className={styles.categoriesPage}>
+            <BackArrow className={styles.bachArrow} />
             <div className={styles.header}>
+                <div className={styles.title}>Словник</div>
+                <SearchInput placeholder="Пошук" onSearch={handleSearch} className={styles.searchMenu} />
+                <MyButton onClick={() => setShowAddCategory(true)}
+                    className={styles.addButton}
+                >
+                    <svg width="38" height="32" viewBox="0 0 38 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="17" width="3.98187" height="32" fill="#232323" />
+                        <rect y="17.4285" width="3.42857" height="37.1641" transform="rotate(-90 0 17.4285)" fill="#232323" />
+                    </svg>
 
-                <SearchInput placeholder="Пошук" onSearch={() => {}} />
+                </MyButton>
+
             </div>
-
-
             {showAddCategory && (
                 <>
                     <div className={`${styles.overlay} ${showAddCategory ? styles.showOverlay : ''}`}></div>
-                    <AddCategoryForm onAddCategory={handleAddCategory} onCloseForm={handleCloseForm} />
+                    <AddCategoryForm onAddCategory={handleAddCategory} onCloseForm={() => setShowAddCategory(false)} />
                 </>
             )}
 
             <div className={styles.categoryList}>
-                {categories.map((category, index) => (
+                {currentCategories.map((category, index) => (
                     <button
                         className={styles.categoryButton}
                         key={index}

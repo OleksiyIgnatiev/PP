@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import styles from './SearchInput.module.css';
 import searchImage from '../../assets/images/search.png';
+import MyInput from '../MyInput/MyInput';
 
 interface SearchInputProps {
   placeholder: string;
   onSearch: (searchTerm: string) => void;
-  className:string
+  className: string
 }
 
-const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch, ...props}) => {
+const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch, className }) => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(event.target.value);
-  };
+
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -21,15 +20,15 @@ const SearchInput: React.FC<SearchInputProps> = ({ placeholder, onSearch, ...pro
   };
 
   return (
-    <form onSubmit={handleSubmit} className={`${styles.searchForm} ${props.className}`}>
-        <img src={searchImage} alt="Пошук" title="Шукати" className={styles.searchIcon} />
-        <input
-          type="text"
-          value={searchTerm}
-          onChange={handleInputChange}
-          placeholder={placeholder}
-          className={styles.input}
-        />
+    <form onSubmit={handleSubmit} className={`${styles.searchForm} ${className}`}>
+      <img src={searchImage} alt="Пошук" title="Шукати" className={styles.searchIcon} />
+
+      <MyInput
+        value={searchTerm}
+        setValue={(value: string) => { onSearch(value); setSearchTerm(value) }}
+        placeholder={placeholder}
+        className={styles.input}
+      />
     </form>
   );
 };

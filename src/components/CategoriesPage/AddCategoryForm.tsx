@@ -2,19 +2,26 @@
 
 import React, { useState } from 'react';
 import styles from './AddCategoryForm.module.css';
+import CategoryPageService from './api/CategoryPageService';
 
 interface AddCategoryFormProps {
-  onAddCategory: (categoryName: string) => void;
+  onAddCategory?: (categoryName: string) => void;
   onCloseForm: () => void;
+  isEdit?: number
 }
 
-const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ onAddCategory, onCloseForm }) => {
+const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ onAddCategory, onCloseForm,isEdit}) => {
   const [newCategoryName, setNewCategoryName] = useState('');
 
   const handleAddCategory = () => {
     if (newCategoryName.trim() !== '') {
-      onAddCategory(newCategoryName);
-      setNewCategoryName('');
+      if(isEdit){
+        CategoryPageService.editCategory(Number(isEdit),newCategoryName)
+      }else if(onAddCategory){
+        onAddCategory(newCategoryName);
+        setNewCategoryName('');
+      }
+      onCloseForm()
     }
   };
 
@@ -37,7 +44,7 @@ const AddCategoryForm: React.FC<AddCategoryFormProps> = ({ onAddCategory, onClos
             />
           </div>
           <button className={styles.rectangle163} onClick={handleAddCategory}>
-            <div className={styles.buttonTitle}>Додати категорію</div>
+            <div className={styles.buttonTitle}>{isEdit ? 'Змінити категорію' : 'Додати категорію'}</div>
           </button>
         </div>
       </div>

@@ -33,7 +33,7 @@ input:focus {
 .app {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background: #F0EFF5;
 }
 

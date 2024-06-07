@@ -15,6 +15,7 @@ const MyImage: FC<MyImageProps>= (props) => (
     src={props.src} 
     style ={{width:props.width, height: props.height}}
     className={props.className}
+  
     />
 );
 

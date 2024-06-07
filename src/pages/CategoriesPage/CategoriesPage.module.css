@@ -4,26 +4,43 @@
   height: 100%;
   background: #FBFAFF;
   overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 50px 40px;
 }
 
-.header {
-  width: 185px;
-  margin: 20px auto;
+.title {
   font-family: 'Montserrat';
   font-style: normal;
   font-weight: 600;
-  font-size: 20px;
+  font-size: 40px;
   line-height: 49px;
   text-align: center;
   text-transform: capitalize;
+
   color: #000000;
+
+  margin-right: 30px;
+}
+
+.bachArrow {
+  top: 20px;
+  left: 50px;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
 }
 
 .buttonsSection {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 20px 89px; /* Відступи */
+  /*   margin: 20px 89px;  */
 }
 
 .addCategoryButton {
@@ -70,7 +87,30 @@
   line-height: 30px;
   color: rgba(0, 0, 0, 0.5);
 }
+.addButton{
+  height: 70px !important;
+  width: 70px !important;
+  margin-left: 20px;
+  background-color: #ffff;
 
+font-family: 'Montserrat';
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 49px;
+text-align: center;
+text-transform: capitalize;
+border-radius: 20px;
+color: #000000;
+
+
+}
+.addButton svg{
+  width: 37px;
+  min-width: 37px;
+  height: 37px;
+  min-height: 37px;
+}
 .percentage {
   font-family: 'Inter', sans-serif;
   font-style: normal;
@@ -81,9 +121,12 @@
 }
 
 .categoryList {
-  width: calc(100% - 40px);
-  margin: 20px;
-  overflow-y: auto;
+  width: 100%;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0px;
+
 }
 
 .categoryButton {
@@ -109,7 +152,9 @@
   transition: background-color 0.3s;
   cursor: pointer;
 }
-
+.categoryButton span{
+  width: 200px;
+}
 .categoryButton:hover {
   background-color: #F0F0F0;
 }
