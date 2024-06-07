@@ -1,4 +1,4 @@
-import React, { FC, ReactNode, Suspense, useState } from 'react'
+import React, { FC, ReactNode, Suspense, useEffect, useState } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { RouteNames, publicRoutes } from '../router/index';
 import Loader from '../../UI/Loader/Loader';
@@ -10,8 +10,20 @@ interface AuthGuardProps {
 }
 const AuthGuard: FC<AuthGuardProps> = (props) => {
     const {isLoggedIn, role} = useStore();
-    const [isLoading,setIsLoading] = useState();
+    const [isLoading,setIsLoading] = useState<boolean>(true);
+    useEffect(() => {
+        const checkAuthStatus = async () => {
+            // Имитация проверки аутентификации. Замените это на вашу реальную логику проверки.
+            await new Promise((resolve) => setTimeout(resolve, 1000));
+            setIsLoading(false);
+        };
 
+        checkAuthStatus();
+    }, []);
+
+    if (isLoading) {
+        return <Loader />;
+    }
     return (
         <>
             {(isLoggedIn && (role === 'admin' || role === 'user')) ?

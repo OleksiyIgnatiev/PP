@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from './CategoriesPage.module.css';
 import SearchInput from '../../UI/SearchInput/SearchInput';
 import AddCategoryForm from '../../components/CategoriesPage/AddCategoryForm';
@@ -48,7 +48,7 @@ const CategoriesPage: React.FC = () => {
     const handleCloseForm = () => {
         setShowAddCategory(false);
     };
-
+    const navigate = useNavigate()
     return (
         <div className={styles.categoriesPage}>
             <div className={styles.header}>
@@ -86,7 +86,7 @@ const CategoriesPage: React.FC = () => {
                     <button
                         className={styles.categoryButton}
                         key={index}
-                        onClick={() => console.log('Category clicked:', category.categoryId)}
+                        onClick={() => navigate('/categorie/' + category.categoryId)}
                     >
                         <span>{category.categoryName}</span>
                         <span className={styles.wordCount}>{category.categoryLength} слова</span>
