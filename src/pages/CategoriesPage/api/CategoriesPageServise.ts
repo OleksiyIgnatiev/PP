@@ -24,6 +24,6 @@ export default class CategoryService {
   }
 
   static async fetchCategories(userId: number): Promise<AxiosResponse<CategoryResponse>> {
-    return $api.get<CategoryResponse>(`Category/user/${userId}`);
+    return $api.get<CategoryResponse>(`category/user/${userId}`);
 }
 }

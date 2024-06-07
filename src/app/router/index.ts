@@ -11,6 +11,9 @@ import Subscription from '../../pages/Subscription/Subscription';
 import EditUserPage from '../../pages/EditUserPage/EditUserPage';
 import NoticeViolation from '../../pages/NoticeViolation/NoticeViolation';
 import CategoryPage from '../../pages/CategoryPage/components/CategoryPage';
+import SelectCategoriesPage from '../../pages/SelectCategoriesPage/components/SelectCategoriesPage';
+import LearnWordsPage from '../../pages/LearnWordsPage/components/LearnWordsPage';
+import RepeatWordsPage from '../../pages/RepeatWordsPage/components/RepeatWordsPage';
 
 export interface IRoute {
     path: string;
@@ -32,6 +35,9 @@ export enum RouteNames {
     EDIT_USER = '/edit-user',
     SUBSCRIPTION = '/subscription',
     NOTICE_VIOLATION = '/notice-violation',
+    SELECT_CATEGORIES = '/select-categories/:type',
+    LEARN_WORDS = '/learn-words',
+    REPEAT_WORDS = '/repeat-words',
 
 }
 
@@ -42,11 +48,13 @@ export const adminRoutes: IRoute[] = [
 export const userRoutes: IRoute[] = [
     { path: RouteNames.MAIN_USER, element: MainUserPage },
     { path: RouteNames.CATEGORIES, element: CategoriesPage },
-  
     { path: RouteNames.WORD, element: AddWordPage },
     { path: RouteNames.CATEGORIES, element: CategoriesPage },
     { path: RouteNames.CATEGORIE, element: CategoryPage },
     { path: RouteNames.SHARE, element: SharePage }, 
+    { path: RouteNames.SELECT_CATEGORIES, element: SelectCategoriesPage }, 
+    { path: RouteNames.LEARN_WORDS, element: LearnWordsPage }, 
+    { path: RouteNames.REPEAT_WORDS, element: RepeatWordsPage }, 
 ];
 
 export const publicRoutes: IRoute[] = [

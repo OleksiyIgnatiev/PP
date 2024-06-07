@@ -11,6 +11,11 @@ overflow-y: auto;
 .topRow {
     display: flex;
     flex-direction: column;
+    margin-top: 20px;
+}
+.buttonRow{
+    display: flex;
+    flex-direction: column;
 }
 
 

@@ -45,7 +45,7 @@ const CategoryPage = () => {
         isEditOpen&&
         <AddCategoryForm onCloseForm = {() =>setIsEditOpen(false)} isEdit={Number(categoryId)}/>
       }
-      {categoryId}
+  
       <div className={style.topRow}>
         <WhiteFlutterBlock className={style.actionElement} onClick={resetProgres} >
           <MyImage src={clockIcon} alt='clockIcon' className={style.actionElementIcon} />
@@ -64,7 +64,7 @@ const CategoryPage = () => {
           Видалити категорію
         </WhiteFlutterBlock>
       </div>
-      <div className={style.topRow}>
+      <div className={style.buttonRow}>
         <div className={style.subTitle}>Слова</div>
         <div className={style.wordsList}>
           {words.map(word =>

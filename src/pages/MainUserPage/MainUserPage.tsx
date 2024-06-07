@@ -33,11 +33,11 @@ const MainUserPage = () => {
             </svg>
               <div className={style.navElementText}>Словник</div>
           </Link>
-          <Link className={style.navElement} to={''}>
+          <Link className={style.navElement} to={'/select-categories/learn'}>
               <img src={LearnNewIcon} alt="LearnNewIcon" className={style.LearnNewIcon}/>
               <div className={style.navElementText}>Вчити нові слова</div>
           </Link>
-          <Link className={style.navElement} to={''}>
+          <Link className={style.navElement} to={'/select-categories/repeat'}>
               <img src={RepeatIcon} alt="RepeatIcon" className={style.RepeatIcon}/>
               <div className={style.navElementText}>Повторити слова</div>
           </Link>

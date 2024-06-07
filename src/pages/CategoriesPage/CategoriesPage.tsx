@@ -41,10 +41,8 @@ const CategoriesPage: React.FC = () => {
     const handleAddCategory = async (newCategory: string) => {
         try {
             const response = await CategoryService.createCategory(newCategory, Number(userId));
-            console.log('Категорію успішно створено:', response.data);
             //@ts-ignore
             navigate(`/categorie/${response.data.data}`)
-
         } catch (error) {
             console.error('Помилка при створенні категорії:', error);
         }
@@ -70,7 +68,6 @@ const CategoriesPage: React.FC = () => {
                     </svg>
 
                 </MyButton>
-
             </div>
             {showAddCategory && (
                 <>
