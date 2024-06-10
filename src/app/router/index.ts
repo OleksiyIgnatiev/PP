@@ -14,6 +14,7 @@ import CategoryPage from '../../pages/CategoryPage/components/CategoryPage';
 import SelectCategoriesPage from '../../pages/SelectCategoriesPage/components/SelectCategoriesPage';
 import Words from '../../models/Words/components/Words/Words';
 import AccountPage from '../../pages/AccountPage/components/AccountPage';
+import TestPage from '../../pages/TestPage/compoennts/TestPage/TestPage';
 
 export interface IRoute {
     path: string;
@@ -39,6 +40,7 @@ export enum RouteNames {
     LEARN_WORDS = '/learn-words',
     REPEAT_WORDS = '/repeat-words',
     ACOUNT = '/account',
+    TEST = '/test',
 }
 
 export const adminRoutes: IRoute[] = [
@@ -56,6 +58,11 @@ export const userRoutes: IRoute[] = [
     { path: RouteNames.LEARN_WORDS, element: Words }, 
     { path: RouteNames.REPEAT_WORDS, element: Words }, 
     { path: RouteNames.ACOUNT, element: AccountPage }, 
+    { path: RouteNames.ADMIN_PANEL, element: AdminPanel },
+    { path: RouteNames.TEST, element: TestPage },
+    { path: RouteNames.EDIT_USER, element: EditUserPage },
+/*     { path: RouteNames.NOTICE_VIOLATION, element: NoticeViolation }, */
+{ path: RouteNames.SUBSCRIPTION, element: Subscription },
 ];
 
 export const publicRoutes: IRoute[] = [
@@ -65,7 +72,6 @@ export const publicRoutes: IRoute[] = [
     { path: RouteNames.WORD, element: AddWordPage }, // Роут слова додано до публічних роутів
     { path: RouteNames.SHARE, element: SharePage }, // Роут Share додано до публічних роутів
     { path: RouteNames.ADMIN_PANEL, element: AdminPanel },
-    { path: RouteNames.EDIT_USER, element: EditUserPage },
-    { path: RouteNames.NOTICE_VIOLATION, element: NoticeViolation },
+
     { path: RouteNames.SUBSCRIPTION, element: Subscription },
 ];
