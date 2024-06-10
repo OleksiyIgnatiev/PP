@@ -86,8 +86,9 @@ const CategoriesPage: React.FC = () => {
                         <span>{category.categoryName}</span>
                         <span className={styles.wordCount}>{category.categoryLength} слова</span>
                         <span className={styles.percentage}>
-                            {category.categoryLength ? `${((category.categoryLength / wordCount) * 100).toFixed(2)}%` : '0%'}
+                            {`${category.progressionPercentage}%`}
                         </span>
+                        <>{console.log(category)}</>
                     </button>
                 ))}
             </div>

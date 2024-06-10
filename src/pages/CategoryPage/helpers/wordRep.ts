@@ -9,7 +9,7 @@ export const getWordTypeText = (repetitionNum: number):WordType =>{
             text: 'Нове слово',
             color: "#D9D9D9"
         }
-    }else  if(repetitionNum > 20){
+    }else  if(repetitionNum > 5){
         return {
             text: 'Вивчено',
             color: "#4CAF50"

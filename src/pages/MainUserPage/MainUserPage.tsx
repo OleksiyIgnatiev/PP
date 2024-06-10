@@ -3,21 +3,20 @@ import useStore from '../../state/useStore'
 import ThemeSwitcher from '../../UI/ThemeSwitcher/ThemeSwitcher'
 import Logo from '../../UI/Logo/Logo'
 import style from './MainUserPage.module.css'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import LearnNewIcon from '../../assets/images/learn-new-icon.png'
 import RepeatIcon from '../../assets/images/Repeat-icon.png';
 import MixedLearn from '../../assets/images/Mixed-learn-icon.png'
 import profilIcon from '../../assets/images/profileIcon.png'
-import { RouteNames } from '../../app/router'
+import { RouteNames } from '../../app/router';
+
 const MainUserPage = () => {
   const { logout } = useStore()
-
+  const navigate = useNavigate()
   return (
     <div className={style.main}>
-   {/*    MainUserPage */}
       <Logo />
-{/*       <div onClick={logout}>logout</div> */}
-      <button className={style.proFileIcon}><img src={profilIcon} alt="profilIcon" /></button>
+      <button className={style.proFileIcon} onClick={()=> navigate('/account')}><img src={profilIcon} alt="profilIcon" /></button>
       <ThemeSwitcher className={style.switcher}/>
       <div className={style.row}>
         <div className={style.navMenu}>
