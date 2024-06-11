@@ -31,7 +31,17 @@
   border-collapse: collapse;
   font-size: 1.5em;
 }
-
+tr> td{
+  text-align: center;
+  max-width: 200px;
+  word-wrap: break-word; /* Или используйте overflow-wrap: break-word; */
+  word-break: break-all;
+  height: 50px;
+  
+}
+th{
+  text-align: center;
+}
 .userTable th,
 .userTable td {
   border: 1px solid #ddd;
@@ -40,9 +50,18 @@
 
 .userTable th {
   background-color: #f2f2f2;
-  text-align: left;
-}
 
+/*   display: flex; */
+/*   flex-direction: row; */
+
+}
+.passwordRow{
+  display: flex;
+  flex-direction: row;
+  justify-content:center;
+  column-gap: 10px;
+  align-items: center;
+}
 
 .modal {
   position: fixed;
@@ -88,4 +107,30 @@
 
 .confirmDeleteButton:hover {
   background-color: #698AFE;
+}
+
+
+.actionIcon{
+  width: 85px;
+  height: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.actionIcon {
+
+}
+
+.buttonRow{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: auto;
+}
+
+
+.eyeIcon{
+  cursor: pointer;
 }

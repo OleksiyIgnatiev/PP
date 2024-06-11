@@ -1,12 +1,14 @@
 import React, { FC } from 'react'
 import style from './BackArrow.module.css'
 import useStore from '../../state/useStore';
+import { useNavigate } from 'react-router-dom';
 interface Props{
     className?:string
 }
 const BackArrow:FC<Props> = (props) => {
+    const navigate = useNavigate();
     const goBack = () => {
-        window.history.back();
+        navigate('/')
     };
     const { theme } = useStore();
     return (

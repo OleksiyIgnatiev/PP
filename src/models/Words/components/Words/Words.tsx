@@ -54,7 +54,7 @@ const Words: FC = () => {
         if (lastSegment === 'repeat-words') {
             while (!found && attempts < maxAttempts) {
                 word = words[getRandomNumber(words.length)];
-                if (word.repetitionNum > 0) {
+                if (word.repetitionNum > 0 && word.repetitionNum <= 5) {
                     found = true;
                     setCurrentWord(word);
                 }
@@ -63,7 +63,7 @@ const Words: FC = () => {
         } else {
             while (!found && attempts < maxAttempts) {
                 word = words[getRandomNumber(words.length)];
-                if (word.repetitionNum == 0 && word.repetitionNum < 5) {
+                if (word.repetitionNum == 0 ) {
                     found = true;
                     setCurrentWord(word);
                 }

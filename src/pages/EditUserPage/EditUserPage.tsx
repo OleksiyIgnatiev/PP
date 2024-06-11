@@ -1,48 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import styles from './EditUserPage.module.css';
+import { EditUserService } from './api/EditUserService';
+import useStore from '../../state/useStore';
 
 const EditUserPage: React.FC = () => {
-  const { userId } = useParams<{ userId: string }>();
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState('sdsdsd');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
+  const {userId} = useParams();
+  
   useEffect(() => {
-    // Завантаження даних користувача
-    fetch(`/api/users/${userId}`)
-      .then(response => response.json())
-      .then(data => {
-        setUsername(data.username);
-        setEmail(data.email);
-        setPassword(data.password);
-      })
-      .catch(error => {
-        console.error('Виникла помилка при завантаженні даних користувача!', error);
-      });
+    const fetch = async() =>{
+      const {data} = await EditUserService.getUserInfo(Number(userId))
+      console.log(data.data)
+      setUsername(data.data.username)
+      setEmail(data.data.email)
+    }
+    fetch()
   }, [userId]);
 
-  const handleSaveChanges = () => {
-    // Логіка збереження змін
-    navigate('/admin-panel')
-    fetch(`/api/users/${userId}`, {
-      method: 'PUT',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, email, password })
-    })
-    .then(response => {
-      if (response.ok) {
-        navigate('/admin-panel');
-      } else {
-        console.error('Виникла помилка при збереженні змін!');
-      }
-    })
-    .catch(error => {
-      console.error('Виникла помилка при збереженні змін!', error);
-    });
+  const handleSaveChanges = async() => {
+    await EditUserService.changeUserInfo(Number(userId),username,email,password)
+    navigate('/account')
   };
 
   return (
@@ -69,7 +51,7 @@ const EditUserPage: React.FC = () => {
       <div className={styles.formGroup}>
         <label htmlFor="password">Пароль</label>
         <input 
-          type="password" 
+          type="text" 
           id="password" 
           value={password} 
           onChange={(e) => setPassword(e.target.value)} 

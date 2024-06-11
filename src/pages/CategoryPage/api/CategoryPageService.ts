@@ -22,6 +22,6 @@ export default class CategoryPageService {
         return $api.put(`/category/clear-content/${id}`,);
     }
     static async resetProgres(id:number): Promise<AxiosResponse> {
-        return $api.put(`/category/reset-progress/{category_id}/${id}`,);
+        return $api.put(`/category/reset-progress/${id}`,);
     }
 }

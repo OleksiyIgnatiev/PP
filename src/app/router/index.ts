@@ -15,6 +15,7 @@ import SelectCategoriesPage from '../../pages/SelectCategoriesPage/components/Se
 import Words from '../../models/Words/components/Words/Words';
 import AccountPage from '../../pages/AccountPage/components/AccountPage';
 import TestPage from '../../pages/TestPage/compoennts/TestPage/TestPage';
+import MessagePage from '../../pages/MessagePage/MessagePage';
 
 export interface IRoute {
     path: string;
@@ -24,7 +25,6 @@ export interface IRoute {
 export enum RouteNames {
     LOGIN = '/login',
     MAIN_USER = '/',
-    MAIN_ADMIN = '/admin',
     ADMIN_LOGIN = '/admin-login',
     FORGOT_PASSWORD = '/forgot-password',
     REGISTRATION = '/registration',
@@ -33,21 +33,27 @@ export enum RouteNames {
     SHARE = '/share',
     WORD = '/word', 
     ADMIN_PANEL = '/admin-panel',
-    EDIT_USER = '/edit-user',
+    EDIT_USER = '/edit-user/:userId',
     SUBSCRIPTION = '/subscription',
-    NOTICE_VIOLATION = '/notice-violation',
+    NOTICE_VIOLATION = '/notice-violation/:id',
     SELECT_CATEGORIES = '/select-categories/:type',
     LEARN_WORDS = '/learn-words',
     REPEAT_WORDS = '/repeat-words',
     ACOUNT = '/account',
     TEST = '/test',
+    USER_MESSAGES = '/messages'
 }
 
 export const adminRoutes: IRoute[] = [
-    { path: RouteNames.MAIN_ADMIN, element: MainAdminPage },
+    { path: RouteNames.ADMIN_PANEL, element: AdminPanel },
+    { path: RouteNames.NOTICE_VIOLATION, element: NoticeViolation },
+    { path: RouteNames.EDIT_USER, element: EditUserPage },
+
 ];
 
 export const userRoutes: IRoute[] = [
+    { path: RouteNames.USER_MESSAGES, element: MessagePage },
+
     { path: RouteNames.MAIN_USER, element: MainUserPage },
     { path: RouteNames.CATEGORIES, element: CategoriesPage },
     { path: RouteNames.WORD, element: AddWordPage },
@@ -61,17 +67,16 @@ export const userRoutes: IRoute[] = [
     { path: RouteNames.ADMIN_PANEL, element: AdminPanel },
     { path: RouteNames.TEST, element: TestPage },
     { path: RouteNames.EDIT_USER, element: EditUserPage },
-/*     { path: RouteNames.NOTICE_VIOLATION, element: NoticeViolation }, */
+
 { path: RouteNames.SUBSCRIPTION, element: Subscription },
 ];
 
 export const publicRoutes: IRoute[] = [
     { path: RouteNames.LOGIN, element: LoginPage },
     { path: RouteNames.REGISTRATION, element: RegistrationPage },
-    { path: RouteNames.CATEGORIES, element: CategoriesPage },
-    { path: RouteNames.WORD, element: AddWordPage }, // Роут слова додано до публічних роутів
-    { path: RouteNames.SHARE, element: SharePage }, // Роут Share додано до публічних роутів
-    { path: RouteNames.ADMIN_PANEL, element: AdminPanel },
-
-    { path: RouteNames.SUBSCRIPTION, element: Subscription },
+    //{ path: RouteNames.CATEGORIES, element: CategoriesPage },
+    //{ path: RouteNames.WORD, element: AddWordPage }, // Роут слова додано до публічних роутів
+    //{ path: RouteNames.SHARE, element: SharePage }, // Роут Share додано до публічних роутів
+    //{ path: RouteNames.ADMIN_PANEL, element: AdminPanel },
+    //{ path: RouteNames.SUBSCRIPTION, element: Subscription },
 ];

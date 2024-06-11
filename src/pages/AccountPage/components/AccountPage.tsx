@@ -38,19 +38,19 @@ const AccountPage = () => {
         <Link to ={'/share'}><img  src={shareIcon} alt="" className={style.shareIcon}/></Link>
       </div>
       <div className={style.navRow}>
-{/*         <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate('/notice-violation')}>
+{        <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate('/messages')}>
             <MyImage src={bellIcon} alt="" className={style.navIcon}/>
             <div className={style.navText}>Сповіщення</div>
-        </WhiteFlutterBlock> */}
-        <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate('/test')}>
+        </WhiteFlutterBlock>}
+  {/*       <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate('/test')}>
             <MyImage src={testIcon} alt="" className={style.navIcon}/>
             <div className={style.navText}>Пройти тест для визначення рівня володіння англійською</div>
-        </WhiteFlutterBlock>
+        </WhiteFlutterBlock> */}
         <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate('/subscription')}>
             <MyImage src={subscriptionIcon} alt="" className={style.navIcon}/>
             <div className={style.navText}>Підписка</div>
         </WhiteFlutterBlock>
-        <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate('/edit-user')}>
+        <WhiteFlutterBlock className={style.navItem} onClick={()=> navigate(`/edit-user/${userId}`)}>
             <MyImage src={settingsIcon} alt="" className={style.navIcon}/>
             <div className={style.navText}>Параметри входу</div>
         </WhiteFlutterBlock>

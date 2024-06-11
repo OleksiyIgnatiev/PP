@@ -19,7 +19,7 @@ const AppRouter = () => {
                             element={   <Suspense fallback={<Loader/>}><route.element /></Suspense>}
                         />
                     ))}
-                    <Route path="*" element={<Navigate to={RouteNames.MAIN_ADMIN} replace />} />
+                    <Route path="*" element={<Navigate to={RouteNames.ADMIN_PANEL} replace />} />
                 </>
             )}
             {(role === 'user') && (

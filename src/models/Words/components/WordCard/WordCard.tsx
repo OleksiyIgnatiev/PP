@@ -50,7 +50,7 @@ const WordCard: FC<Props> = ({ wordData,getNewWord ,handleRealizedWord}) => {
           <div className={style.turnBlockText} style={{ color: '#5ED486' }}>Якщо ти це знав проведи праворуч</div>
         </div>
       </div>
-      {wordData.wordId}
+ 
       <div className={style.wordRow}>
         <div className={style.word}>{wordData?.name}</div>
         <div className={style.wordTranslation}>{wordData?.translation}</div>
